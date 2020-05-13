@@ -65,14 +65,15 @@ const path = {
     src: {
         html: [`${ sourceFolder }/*.html`, `!${ sourceFolder }/_*.html`],
         style: `${ sourceFolder }/style/*.scss`,
-        script: [`${ sourceFolder }/js/**/*.js`, `${ sourceFolder }/blocks/**/*.js`],
+        script: `${ sourceFolder }/js/index.js`,
         img: `${ sourceFolder }/images/*.{jpeg,png,gif,svg,webp}`,
         icons: `${ sourceFolder }/images/icons/*.svg`,
         favicons: `${ sourceFolder }/favicon.png`,
         fonts: `${ sourceFolder }/fonts/*.*`
     },
     watch: {
-        html: `${ sourceFolder }/*.{pug,html}`,
+        html: `${ sourceFolder }/*.html`,
+        blocks: `${ sourceFolder }/blocks/**/*.*`,
         style: `${ sourceFolder }/style/**/*.scss`,
         script: `${ sourceFolder }/js/**/*.js`,
         img: `${ sourceFolder }/images/**/*.{jpeg,png,gif,svg,webp}`
@@ -90,12 +91,13 @@ function browserSyncDevelopment() {
             baseDir: `./${ projectFolder }/`
         },
         port: 4000,
-        notify: true
+        notify: false
     });
 }
 
 function watchDevelopment() {
     watch([path.watch.html], htmlDevelopment);
+    watch([path.watch.blocks], series(styleDevelopment, htmlDevelopment, scriptDevelopment));
     watch([path.watch.style], styleDevelopment);
     watch([path.watch.script], scriptDevelopment);
     watch([path.watch.img], imagesDevelopment);
@@ -104,7 +106,6 @@ function watchDevelopment() {
 function styleLinter() {
     return src(path.src.style)
         .pipe(plumber())
-        .pipe(styleLint())
         .pipe(styleLint({
             reporters: [
                 {
@@ -129,6 +130,7 @@ function htmlDevelopment() {
             prefix: '@@',
             basepath: '@file'
         }))
+        .pipe(replace(/(\.\.\/)+/, ''))
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream());
 }
@@ -140,6 +142,7 @@ function htmlProduction() {
             prefix: '@@',
             basepath: '@file'
         }))
+        .pipe(replace(/(\.\.\/)+/, ''))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('.js', '.min.js'))
         .pipe(htmlWebp())
@@ -154,7 +157,7 @@ function styleDevelopment() {
         .pipe(scss({
             outputStyle: 'expanded'
         }))
-        .pipe(replace(/(..\/){2}/, '../'))
+        .pipe(replace(/(\.\.\/)+/, '../'))
         .pipe(styleWebp())
         .pipe(dest(path.build.style))
         .pipe(sourceMap.write('.'))
@@ -299,17 +302,15 @@ function faviconsProduction() {
 if (!production) {
     const build = series(
         clean,
-        series(
-            htmlDevelopment,
-            parallel(styleDevelopment, styleLinter),
-            parallel(scriptDevelopment, scriptLinter),
-            scriptDevelopment,
-            imagesDevelopment,
-            fontsDevelopment,
-            faviconsDevelopment
-        )
+        htmlDevelopment,
+        styleDevelopment, styleLinter,
+        scriptDevelopment, scriptLinter,
+        scriptDevelopment,
+        imagesDevelopment,
+        fontsDevelopment,
+        faviconsDevelopment
     );
-    const watcher = parallel(build, watchDevelopment, browserSyncDevelopment);
+    const watcher = parallel(watchDevelopment, browserSyncDevelopment, build);
     
     exports.lint = series(styleLinter, scriptLinter);
     exports.build = build;

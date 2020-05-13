@@ -1,0 +1,177 @@
+.header {
+  padding: 10px 0 15px;
+
+  @media ($tablet) {
+    padding: 25px 0 0;
+  }
+
+  @media ($desktop) {
+    padding: 55px 0 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @extend %container;
+
+    @media ($tablet) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__mob-text {
+    @media ($tablet) {
+      display: none;
+    }
+  }
+
+  &__burger-menu {
+    position: relative;
+    width: 24px;
+    height: 18px;
+
+    @media ($tablet) {
+      display: none;
+    }
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #222;
+      transition: 0.4s;
+
+      &:nth-child(1) {
+        top: 0;
+        transform-origin: 0% 50%;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(4) {
+        bottom: 0;
+      }
+    }
+
+    &--open {
+      span {
+        &:nth-child(1) {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        &:nth-child(2) {
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 67px;
+    right: 0;
+    left: 0;
+    transition: 0.4s;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+
+    &--open {
+      transform: scaleY(1);
+    }
+
+    @media ($tablet) {
+      position: static;
+      flex-grow: 1;
+      transform: scaleY(1);
+    }
+  }
+
+  &__link-list {
+    @media ($tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    @extend %list-reset;
+  }
+
+  &__item {
+    position: relative;
+    padding: 25px 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: #fff;
+    border-top: 2px solid $border-main-color;
+
+    &:last-child {
+      border-bottom: 2px solid $border-main-color;
+    }
+
+    @media ($tablet) {
+      padding: 0;
+      margin: 0 2.5%;
+      font-size: 18px;
+      border: none;
+
+      &--active {
+        &::after {
+          position: absolute;
+          right: 0;
+          bottom: -10px;
+          left: 0;
+          display: block;
+          height: 2px;
+          content: '';
+          background-color: $accent-color;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+        border: none;
+      }
+    }
+  }
+
+  &--color-bg {
+    .header__item {
+      &--active {
+        &::after {
+          @media ($desktop) {
+            background-color: #fff;
+          }
+        }
+      }
+
+      @media ($desktop) {
+        color: #fff;
+      }
+    }
+  }
+}
