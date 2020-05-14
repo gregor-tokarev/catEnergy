@@ -129,6 +129,11 @@
     background-color: #fff;
     border-top: 2px solid $border-main-color;
 
+    a {
+      color: initial;
+      text-decoration: none;
+    }
+
     &:last-child {
       border-bottom: 2px solid $border-main-color;
     }
