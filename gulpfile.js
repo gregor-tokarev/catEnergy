@@ -69,7 +69,7 @@ const path = {
         img: `${ sourceFolder }/images/*.{jpeg,png,gif,svg,webp}`,
         icons: `${ sourceFolder }/images/icons/*.svg`,
         favicons: `${ sourceFolder }/favicon.png`,
-        fonts: `${ sourceFolder }/fonts/*.*`
+        fonts: `${ sourceFolder }/fonts/**/*.*`
     },
     watch: {
         html: `${ sourceFolder }/*.html`,
@@ -130,7 +130,7 @@ function htmlDevelopment() {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(replace(/(\.\.\/)+/, ''))
+        .pipe(replace(/(\.\.\/)+/g, ''))
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream());
 }
@@ -142,7 +142,7 @@ function htmlProduction() {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(replace(/(\.\.\/)+/, ''))
+        .pipe(replace(/(\.\.\/)+/g, ''))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('.js', '.min.js'))
         .pipe(htmlWebp())
@@ -157,7 +157,7 @@ function styleDevelopment() {
         .pipe(scss({
             outputStyle: 'expanded'
         }))
-        .pipe(replace(/(\.\.\/)+/, '../'))
+        .pipe(replace(/(\.\.\/)+/g, '../'))
         .pipe(styleWebp())
         .pipe(dest(path.build.style))
         .pipe(sourceMap.write('.'))
@@ -169,7 +169,7 @@ function styleProduction() {
         .pipe(scss({
             outputStyle: 'expanded'
         }))
-        .pipe(replace(/(..\/)+/, '../'))
+        .pipe(replace(/(\.\.\/)+/g, '../'))
         .pipe(styleWebp())
         .pipe(dest(path.build.style))
         .pipe(styleMediaGroup())

@@ -1,0 +1,74 @@
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $card-bg-color;
+
+  &__item {
+    text-align: center;
+
+    &:not(:last-child) {
+      padding: 20px 0;
+      border-bottom: 1px solid $border-main-color;
+
+      @media ($tablet) {
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+
+    @media ($tablet) {
+      padding: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0;
+
+    @extend %container;
+
+    @media ($tablet) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @extend %list-reset;
+  }
+
+  &__instagram {
+    margin: 0 40px;
+  }
+
+  &__copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #444;
+
+    @media ($tablet) {
+      padding: 0;
+    }
+
+    &-text {
+      @media ($tablet) {
+        margin-right: 25px;
+      }
+    }
+  }
+}
