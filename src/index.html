@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-@@include('blocks/header/_header.html')
-@@include('blocks/footer/_footer.html')
+@@include('blocks/header/header.html', {
+  'modificator': 'header--fixed'
+})
+@@include('blocks/hero/hero.html')
+@@include('blocks/footer/footer.html')
 <script src="js/main.js"></script>
 </body>
 </html>

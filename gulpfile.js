@@ -158,7 +158,6 @@ function styleDevelopment() {
             outputStyle: 'expanded'
         }))
         .pipe(replace(/(\.\.\/)+/g, '../'))
-        .pipe(styleWebp())
         .pipe(dest(path.build.style))
         .pipe(sourceMap.write('.'))
         .pipe(browserSync.stream());

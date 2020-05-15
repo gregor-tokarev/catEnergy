@@ -1,0 +1,24 @@
+<div class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <h1 class="hero__title">Функциональное <br>
+        питание для котов</h1>
+      <h3 class="hero__lead">Занялся собой? Займись котом!</h3>
+      <div class="hero__button-desktop">@@include('../button/button.html', {
+        'text': 'Подобрать программу'
+        })
+      </div>
+    </div>
+    <div class="hero__image">
+      <picture>
+        <source media="(min-width: 1439px)" srcset="../../images/index-can.png">
+        <source media="(min-width: 767px)" srcset="../../images/index-can-tablet.png">
+        <img src="../../images/index-can-mobile.png" alt="Can">
+      </picture>
+    </div>
+    <div class="hero__button-mobile">@@include('../button/button.html', {
+      'text': 'Подобрать программу'
+      })
+    </div>
+  </div>
+</div>

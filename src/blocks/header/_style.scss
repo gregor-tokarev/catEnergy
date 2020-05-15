@@ -93,6 +93,7 @@
     top: 67px;
     right: 0;
     left: 0;
+    z-index: 400;
     transition: 0.4s;
     transform: scaleY(0);
     transform-origin: 50% 0;
@@ -130,7 +131,7 @@
     border-top: 2px solid $border-main-color;
 
     a {
-      color: initial;
+      color: inherit;
       text-decoration: none;
     }
 
@@ -142,6 +143,7 @@
       padding: 0;
       margin: 0 2.5%;
       font-size: 18px;
+      background-color: transparent;
       border: none;
 
       &--active {
@@ -154,6 +156,10 @@
           height: 2px;
           content: '';
           background-color: $accent-color;
+
+          @media ($desktop) {
+            background-color: #fff;
+          }
         }
       }
 
@@ -161,6 +167,10 @@
         margin-right: 0;
         border: none;
       }
+    }
+
+    @media ($desktop) {
+      color: #fff;
     }
   }
 
@@ -177,6 +187,16 @@
       @media ($desktop) {
         color: #fff;
       }
+    }
+  }
+
+  &--fixed {
+    @media ($desktop) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 200;
     }
   }
 }
