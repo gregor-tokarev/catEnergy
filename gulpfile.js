@@ -130,6 +130,7 @@ function htmlDevelopment() {
             prefix: '@@',
             basepath: '@file'
         }))
+        .pipe(replace(/\.(scss|sass)/g, '.css'))
         .pipe(replace(/(\.\.\/)+/g, ''))
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream());
@@ -143,6 +144,7 @@ function htmlProduction() {
             basepath: '@file'
         }))
         .pipe(replace(/(\.\.\/)+/g, ''))
+        .pipe(replace(/\.(scss|sass)/g, '.css'))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('.js', '.min.js'))
         .pipe(htmlWebp())
