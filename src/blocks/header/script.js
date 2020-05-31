@@ -14,3 +14,17 @@ burgerMenu.addEventListener('click', event => {
     target.classList.toggle('header__burger-menu--open');
     nav.classList.toggle('header__nav--open');
 });
+<<<<<<< Updated upstream
+=======
+
+const tl = anime.timeline();
+window.timeline = tl;
+
+tl.add({
+    targets: '.header__item',
+    translateX: 100,
+    duration: 1000,
+    opacity: 1,
+    delay: anime.stagger(300)
+}, '+=100');
+>>>>>>> Stashed changes

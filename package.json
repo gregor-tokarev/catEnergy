@@ -74,5 +74,8 @@
     "*.js": [
       "eslint --fix --color"
     ]
+  },
+  "dependencies": {
+    "animejs": "^3.2.0"
   }
 }

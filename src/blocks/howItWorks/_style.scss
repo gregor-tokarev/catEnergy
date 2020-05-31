@@ -1,6 +1,12 @@
 .how-it-works {
   &__inner {
+    padding-bottom: 45px;
+
     @extend %container;
+
+    @media ($tablet) {
+      margin-bottom: 75px;
+    }
   }
 
   &__title {
@@ -17,6 +23,8 @@
   }
 
   &__icon {
+    position: relative;
+    z-index: 23;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,9 +41,11 @@
 
   &__item {
     position: relative;
+    bottom: -100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 0;
 
     &:not(:last-child) {
       margin-bottom: 20px;
