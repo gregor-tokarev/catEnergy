@@ -1,5 +1,8 @@
 .card {
+  position: relative;
+  left: -200px;
   background-color: $card-bg-color;
+  opacity: 0;
 
   &__inner {
     display: flex;

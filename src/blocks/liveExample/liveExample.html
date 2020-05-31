@@ -1,0 +1,30 @@
+<div class="live-example">
+  <div class="live-example__inner">
+    <div class="live-example__content">
+      <h2 class="live-example__title">Живой пример</h2>
+      <p class="live-example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim.
+        Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов
+        в день. </p>
+      <div class="live-example__stats">
+        <div class="live-example__result">
+          <div class="live-example__stat">
+            @@include('../result/result.html', {
+              'number': '5кг',
+              'desc': 'снижение веса'
+            })
+          </div>
+          <div class="live-example__stat">
+            @@include('../result/result.html', {
+              'number': '60 дней',
+              'desc': 'затрачено времени'
+            })
+          </div>
+        </div>
+        <div class="live-example__price">
+          <div class="live-example__expenses">Затраты на питание: </div>
+          <div class="live-example__rub">15 000 руб.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

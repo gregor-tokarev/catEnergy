@@ -125,7 +125,7 @@ function scriptLinter() {
 function htmlDevelopment() {
     return src(path.src.html)
         .pipe(plumber())
-        .pipe(replace(/>\s<\/head>/, '/>@@include(\'../.wkLayout/linkicon.html\')</head>'))
+        .pipe(replace(/>.*<\/head>/i, '>@@include(\'../.wkLayout/linkicon.html\')</head>'))
         .pipe(include({
             prefix: '@@',
             basepath: '@file'

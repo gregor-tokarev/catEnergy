@@ -1,0 +1,148 @@
+.live-example {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $card-bg-color;
+
+  @media ($tablet) {
+    padding-bottom: 75px;
+  }
+
+  @media ($desktop) {
+    background-color: transparent;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: '';
+    background-color: $card-bg-color;
+
+    @media ($tablet) {
+      height: 465px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 34;
+    display: flex;
+
+    @extend %container;
+  }
+
+  &__content {
+    @media ($desktop) {
+      flex-basis: 36%;
+    }
+  }
+
+  &__title {
+    font-family: $def-font;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #111;
+
+    @media ($desktop) {
+      margin-bottom: 150px;
+      font-size: 60px;
+    }
+  }
+
+  &__text {
+    margin: 30px 0 25px;
+    font-family: "Arial MT", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #444;
+
+    @media ($tablet) {
+      margin: 60px 0 55px;
+      font-size: 16px;
+    }
+
+    @media ($tablet) {
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media ($desktop) {
+      flex-direction: column;
+    }
+  }
+
+  &__price {
+    display: flex;
+    margin: 40px auto 0;
+    font-family: $def-font;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #111;
+    text-transform: uppercase;
+
+    @media ($tablet) {
+      display: block;
+      align-self: center;
+      margin: 0 0 0 auto;
+      text-align: right;
+    }
+
+    @media ($desktop) {
+      display: flex;
+      width: 100%;
+      margin: 60px 0 0;
+      text-align: center;
+    }
+  }
+
+  &__expenses {
+    @media ($desktop) {
+      margin-right: 15%;
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-basis: 100%;
+
+    @media ($tablet) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__stat {
+    flex-basis: 45%;
+    flex-grow: 1;
+
+    &:not(:last-child) {
+      margin-right: 10%;
+    }
+
+    @media ($tablet) {
+      flex-basis: 43%;
+
+      &:not(:last-child) {
+        margin-right: 1%;
+      }
+    }
+
+    @media ($desktop) {
+      flex-grow: 0;
+
+      &:not(:last-child) {
+        margin-right: 10%;
+      }
+    }
+  }
+}
