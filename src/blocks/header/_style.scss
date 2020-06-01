@@ -121,6 +121,7 @@
 
   &__item {
     position: relative;
+    left: -100px;
     padding: 25px 0 20px;
     font-size: 20px;
     font-weight: 500;
@@ -129,6 +130,7 @@
     white-space: nowrap;
     background-color: #fff;
     border-top: 2px solid $border-main-color;
+    opacity: 0;
 
     a {
       color: inherit;

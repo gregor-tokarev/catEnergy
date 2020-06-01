@@ -159,6 +159,10 @@ function styleDevelopment() {
         .pipe(scss({
             outputStyle: 'expanded'
         }))
+        .pipe(autoprefixer({
+            cascade: false,
+            grid: true
+        }))
         .pipe(replace(/(\.\.\/)+/g, '../'))
         .pipe(dest(path.build.style))
         .pipe(sourceMap.write('.'))

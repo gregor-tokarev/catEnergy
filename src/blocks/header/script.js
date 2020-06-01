@@ -1,4 +1,5 @@
 import './router';
+import anime from 'animejs';
 
 const nav = document.querySelector('.header__nav');
 
@@ -14,8 +15,6 @@ burgerMenu.addEventListener('click', event => {
     target.classList.toggle('header__burger-menu--open');
     nav.classList.toggle('header__nav--open');
 });
-<<<<<<< Updated upstream
-=======
 
 const tl = anime.timeline();
 window.timeline = tl;
@@ -27,4 +26,3 @@ tl.add({
     opacity: 1,
     delay: anime.stagger(300)
 }, '+=100');
->>>>>>> Stashed changes

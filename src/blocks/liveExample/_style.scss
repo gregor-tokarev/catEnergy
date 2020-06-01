@@ -29,9 +29,52 @@
   &__inner {
     position: relative;
     z-index: 34;
-    display: flex;
 
     @extend %container;
+
+    @media ($desktop) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    width: 71%;
+    margin: 35px auto 0;
+  }
+
+  &__images {
+    position: relative;
+    height: 250px;
+  }
+
+  &__img {
+    position: absolute;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-2 {
+      right: 0;
+    }
+  }
+
+  &__cat {
+    flex-basis: 50%;
+    margin-top: 45px;
+  }
+
+  &__status {
+    font-family: $def-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #111;
+    text-transform: uppercase;
   }
 
   &__content {
