@@ -147,7 +147,7 @@ function htmlProduction() {
         .pipe(replace(/\.(scss|sass)/g, '.css'))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('.js', '.min.js'))
-        .pipe(htmlWebp())
+        // .pipe(htmlWebp())
         .pipe(htmlMin({ collapseWhitespace: true }))
         .pipe(dest(path.build.html));
 }
@@ -255,7 +255,6 @@ function imagesProduction() {
             })
         ]))
         .pipe(dest(path.build.img))
-        .pipe(browserSync.stream());
 }
 
 function fontsDevelopment() {

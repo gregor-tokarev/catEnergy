@@ -1,8 +1,8 @@
 {
-  "name": "layoutStartTemp",
+  "name": "catEnergy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "build": "gulp build --production",
     "dev": "gulp watch",
