@@ -1,0 +1,67 @@
+.map {
+  &__inner {
+    position: relative;
+  }
+
+  &__welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    background-color: #fff;
+
+    @media ($tablet) {
+      width: 100%;
+      padding: 70px 9% 60px;
+    }
+
+    @media ($desktop) {
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      width: 570px;
+      padding: 65px 75px 60px;
+      transform: translateY(-50%);
+    }
+
+    @extend %container;
+  }
+
+  &__title {
+    flex-basis: 45%;
+    font-family: $def-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #111;
+    text-transform: uppercase;
+    white-space: pre-line;
+
+    @media ($tablet) {
+      flex-basis: initial;
+    }
+  }
+
+  &__address {
+    flex-basis: 45%;
+    font-family: "Arial MT", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #444;
+    white-space: pre-line;
+
+    @media ($tablet) {
+      flex-basis: initial;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
