@@ -1,0 +1,25 @@
+.section {
+  border-top: 3px solid $accent-color;
+
+  &__title {
+    position: absolute;
+    z-index: 20;
+    box-sizing: content-box;
+    display: inline-block;
+    max-width: 220px;
+    padding: 0 9%;
+    font-family: $def-font;
+    font-size: 24px;
+    font-weight: 400;
+    color: #111;
+    background-color: #fff;
+    transform: translateY(-50%);
+
+    @media ($tablet) {
+      left: 6.25%;
+      max-width: 590px;
+      padding: 0 6%;
+      transform: translateY(-75%);
+    }
+  }
+}

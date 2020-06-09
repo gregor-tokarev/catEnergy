@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>wkLayout</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style/style.scss">
+    <link rel="stylesheet" href="style/form.scss">
+  </head>
+</head>
+<body>
+@@include('blocks/header/header.html')
+<main class="form">
+  <div class="form__inner">
+    <div class="form__intro">
+      <h1 class="form__title">Подбор программы</h1>
+      <p class="form__desc">Заполните анкету и мы подберем <br>
+        программу питания для вашего кота</p>
+    </div>
+    <form class="form__form">
+      <div class="section">
+        <div class="section__inner">
+
+        </div>
+      </div>
+      <div class="section">
+        <div class="section__inner">
+          <h2 class="section__title">Контактные данные
+            (владельца кота)</h2>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</main>
+@@include('blocks/footer/footer.html')
+<script src="js/vendor.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

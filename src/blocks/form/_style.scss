@@ -1,0 +1,38 @@
+.form {
+  padding-top: 50px;
+
+  &__title {
+    margin-bottom: 35px;
+    font-family: $def-font;
+    font-size: 36px;
+    font-weight: 400;
+    color: #111;
+
+    @media ($tablet) {
+      font-size: 60px;
+    }
+  }
+
+  &__desc {
+    font-family: $def-font;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111;
+    text-transform: uppercase;
+
+    @media ($tablet) {
+      margin-left: 35px;
+      font-size: 20px;
+    }
+
+    @media ($desktop) {
+      margin-left: 0;
+    }
+  }
+
+  &__intro {
+    margin-bottom: 40px;
+
+    @extend %container;
+  }
+}

@@ -14,7 +14,8 @@ module.exports = {
     ],
     
     entry: {
-        main: './src/js/index.js'
+        main: './src/js/index.js',
+        form: './src/js/form.js'
     },
     
     output: {
