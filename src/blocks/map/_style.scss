@@ -3,6 +3,18 @@
     position: relative;
   }
 
+  &--darken {
+    @media ($tablet-max) {
+      .map__welcome {
+        background-color: #f2f2f2;
+      }
+
+      .map__inner {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
   &__welcome {
     display: flex;
     align-items: center;
