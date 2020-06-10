@@ -64,7 +64,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "stylelint ./src/style --fix --color --config ./.stylelintrc"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

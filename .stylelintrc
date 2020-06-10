@@ -8,6 +8,7 @@
     "stylelint-config-recess-order"
   ],
   "rules": {
+    "no-descending-specificity": null,
     "no-eol-whitespace": null,
     "indentation": 2,
     "at-rule-no-unknown": null,

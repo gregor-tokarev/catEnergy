@@ -1,8 +1,10 @@
 .header {
   padding: 10px 0 15px;
+  border-bottom: 1px solid $border-main-color;
 
   @media ($tablet) {
     padding: 25px 0 0;
+    border-bottom: none;
   }
 
   @media ($desktop) {
@@ -123,8 +125,10 @@
     position: relative;
     left: -100px;
     padding: 25px 0 20px;
+    font-family: $def-font;
     font-size: 20px;
     font-weight: 500;
+    color: #111;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -160,7 +164,7 @@
           background-color: $accent-color;
 
           @media ($desktop) {
-            background-color: #fff;
+            background-color: $accent-color;
           }
         }
       }
@@ -174,7 +178,7 @@
     @media ($desktop) {
       font-size: 20px;
       font-weight: 400;
-      color: #fff;
+      color: #111;
     }
   }
 
