@@ -1,0 +1,32 @@
+<div class="product">
+  <div class="product__inner">
+    <div class="product__content">
+      <div class="product__img">
+        <img src="@@url" alt="">
+      </div>
+      <div class="product__info">
+        <h3 class="product__title">@@title</h3>
+        <ul class="product__list">
+          <li class="product__item">
+            <div class="product__characteristic">Объем</div>
+            <div class="product__value">@@value[0</div>
+          </li>
+          <li class="product__item">
+            <div class="product__characteristic">Вкус</div>
+            <div class="product__value">@@value[1</div>
+          </li>
+          <li class="product__item">
+            <div class="product__characteristic">Цена</div>
+            <div class="product__value">@@value[2</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="product__button">
+      @@include('../button/button.html', {
+        'text': 'Заказать',
+        'modificator': 'full-width'
+      })
+    </div>
+  </div>
+</div>

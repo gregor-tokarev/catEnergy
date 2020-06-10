@@ -1,0 +1,35 @@
+.load-more {
+  text-align: center;
+
+  &__inner {
+    padding: 25px 0;
+
+    @extend %container;
+  }
+
+  &__plus img {
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 25px 0 10px;
+    font-family: $def-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #111;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #444;
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+}
