@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>wkLayout</title>
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="style/style.scss">
+  <link rel="stylesheet" href="style/index.scss">
+</head>
+<body>
+@@include('blocks/header/header.html', {
+  'modificator': 'header--fixed header--color-bg'
+})
+@@include('blocks/hero/hero.html')
+<div class="benefits">
+  <div class="benefits__inner">
+
+  @@include("blocks/card/card.html", {
+    "title": "Похудение",
+    "body": "Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.",
+    "link": "Каталог Slim",
+    "icon": "images/card-1__mob-icon.png",
+    "aside-icon": "images/card-1__aside-icon.png",
+    "element-class": "benefits__item"
+  })
+
+  @@include("blocks/card/card.html", {
+    "title": "Похудение",
+    "body": "Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.",
+    "link": "Каталог Slim",
+    "icon": "images/card-2__mob-icon.png",
+    "aside-icon": "images/card-2__aside-icon.png",
+    "element-class": "benefits__item"
+  })
+  </div>
+</div>
+@@include('blocks/howItWorks/howItWorks.html')
+@@include('blocks/liveExample/liveExample.html')
+@@include('blocks/map/index.html')
+@@include('blocks/footer/footer.html')
+<script src="js/vendor.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

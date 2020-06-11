@@ -1,0 +1,35 @@
+.input {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    flex-grow: 1;
+    padding: 15px;
+    font-family: $def-font;
+    font-size: 15px;
+    font-weight: 400;
+    color: #444;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid $first-bd;
+    opacity: 0.5;
+
+    @media ($tablet) {
+      font-size: 20px;
+    }
+  }
+
+  &__label {
+    margin-right: 18px;
+    font-family: $def-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #222;
+    text-transform: uppercase;
+
+    @media ($tablet) {
+      font-size: 20px;
+    }
+  }
+}

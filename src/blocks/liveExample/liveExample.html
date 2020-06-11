@@ -1,0 +1,50 @@
+<div class="live-example">
+  <div class="live-example__inner">
+    <div class="live-example__content">
+      <h2 class="live-example__title">Живой пример</h2>
+      <p class="live-example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim.
+        Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов
+        в день. </p>
+      <div class="live-example__stats">
+        <div class="live-example__result">
+          <div class="live-example__stat">
+            @@include('../result/result.html', {
+            'number': '5кг',
+            'desc': 'снижение веса'
+            })
+          </div>
+          <div class="live-example__stat">
+            @@include('../result/result.html', {
+            'number': '60 дней',
+            'desc': 'затрачено времени'
+            })
+          </div>
+        </div>
+        <div class="live-example__price">
+          <div class="live-example__expenses">Затраты на питание:</div>
+          <div class="live-example__rub">15 000 руб.</div>
+        </div>
+      </div>
+    </div>
+    <div class="live-example__cat">
+      <div class="live-example__images">
+        <div class="live-example__img live-example__img-1">
+          <img src="../../images/before-mobile.png" alt="cat"
+               srcset="../../images/before-mobile@2x.png 2x, ../../images/before-mobile@3x.png 3x, ../../images/before-mobile@4x.png 4x">
+        </div>
+        <div class="live-example__img live-example__img-2">
+          <div class="live-example__closer"></div>
+          <img src="../../images/after-mobile.png" alt="cat"
+               srcset="../../images/after-mobile@2x.png 2x, ../../images/after-mobile@3x.png 3x, ../../images/after-mobile@4x.png 4x">
+        </div>
+      </div>
+      <div class="live-example__controls">
+        <div class="live-example__status">было</div>
+        @@include('../range/index.html', {
+        'element': 'live-example__control'
+        })
+        <div class="live-example__status">стало</div>
+      </div>
+    </div>
+  </div>
+</div>

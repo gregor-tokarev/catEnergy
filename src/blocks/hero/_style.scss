@@ -1,0 +1,121 @@
+.hero {
+  position: relative;
+  color: #fff;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 305px;
+    content: '';
+    background: #63a73a url("../../images/index-background-mobile.png") no-repeat top center;
+
+    @media ($tablet) {
+      display: none;
+    }
+
+    @media ($desktop) {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: unset;
+      display: block;
+      width: 50%;
+      height: auto;
+      background: #63a73a url("../../images/index-background-desktop.png") no-repeat top center;
+    }
+  }
+
+  @media ($tablet) {
+    color: #111;
+  }
+
+  &__inner {
+    padding-top: 30px;
+
+    @extend %container;
+
+    @media ($desktop) {
+      display: flex;
+      padding: 150px 0 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $def-font;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+
+    @media ($tablet) {
+      text-align: left;
+    }
+  }
+
+  &__lead {
+    font-family: $def-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    @media ($tablet) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button-mobile {
+    @media ($tablet) {
+      display: none;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    left: -270px;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+
+    @media ($tablet) {
+      margin-top: -100px;
+      text-align: unset;
+    }
+
+    @media ($desktop) {
+      margin-top: initial;
+    }
+  }
+
+  &__button-desktop {
+    position: relative;
+    z-index: 5;
+    display: none;
+
+    @media ($tablet) {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media ($tablet) {
+      padding-left: 13%;
+      text-align: left;
+    }
+
+    @media ($desktop) {
+      padding-left: 6%  ;
+    }
+  }
+}

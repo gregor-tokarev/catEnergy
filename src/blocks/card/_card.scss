@@ -1,0 +1,118 @@
+.card {
+  position: relative;
+  left: -200px;
+  background-color: $card-bg-color;
+  opacity: 0;
+
+  &__inner {
+    display: flex;
+    padding: 22px 7.5%;
+
+    @media ($tablet) {
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+
+    @media ($tablet) {
+      padding-top: 40px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-family: $def-font;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 37.02px;
+    color: #111;
+    text-transform: uppercase;
+  }
+
+  &__mob-icon {
+    margin-right: 25px;
+
+    @media ($tablet) {
+      display: none;
+    }
+
+    @media ($desktop) {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin-right: 60px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__body {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #dadada;
+
+    @media ($tablet) {
+      border-bottom: none;
+    }
+  }
+
+  &__content {
+    font-family: $def-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #444;
+  }
+
+  &__aside {
+    display: none;
+    flex-basis: 34%;
+
+    @media ($tablet) {
+      display: block;
+    }
+
+    @media ($desktop) {
+      display: none;
+    }
+  }
+
+  &__main {
+    @media ($tablet) {
+      flex-basis: 62%;
+      margin-right: 4%;
+    }
+
+    @media ($desktop) {
+      margin-right: 0;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    font-family: $def-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #111;
+    text-transform: uppercase;
+
+    &::after {
+      display: block;
+      margin-left: 15px;
+      content: url("../../images/right-arrow-long.png");
+
+      @media ($tablet) {
+        margin-left: 25px;
+      }
+    }
+  }
+}

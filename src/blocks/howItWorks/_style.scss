@@ -1,0 +1,134 @@
+.how-it-works {
+  &__inner {
+    padding-bottom: 45px;
+
+    @extend %container;
+
+    @media ($tablet) {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    font-family: $def-font;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #111;
+
+    @media ($tablet) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 23;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: $accent-color;
+
+    @media ($tablet) {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    bottom: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media ($tablet) {
+        margin-bottom: 0;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      display: block;
+      font-family: $def-font;
+      font-size: 280px;
+      font-weight: 400;
+      line-height: 200px;
+      color: $card-bg-color;
+      visibility: hidden;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        &::after {
+          content: '#{$i}';
+        }
+      }
+    }
+
+    @media ($tablet) {
+      flex-basis: 28%;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 220px;
+
+      &:nth-child(odd) {
+        margin-right: 27%;
+      }
+
+      &:nth-child(-n + 2) {
+        margin-bottom: 85px;
+      }
+
+      &::after {
+        visibility: visible;
+      }
+    }
+
+    @media ($desktop) {
+      flex-basis: 17%;
+
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      &:nth-child(-n + 2) {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: 10.65%;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    flex-basis: 75%;
+    font-family: $def-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #444;
+  }
+
+  &__content {
+    @media ($tablet) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

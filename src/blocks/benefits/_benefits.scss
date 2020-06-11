@@ -1,0 +1,26 @@
+.benefits {
+  margin-top: 80px;
+
+  &__inner {
+    @extend %container;
+
+    @media ($desktop) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    &:first-child {
+      margin-bottom: 20px;
+
+      @media ($tablet) {
+        margin-bottom: 30px;
+      }
+
+      @media ($desktop) {
+        margin-right: 6.5%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

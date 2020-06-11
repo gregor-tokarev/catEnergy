@@ -1,0 +1,21 @@
+.button {
+  padding: 15px 25px;
+  font-family: $def-font;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: $accent-color;
+  border: none;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--dis {
+    color: #444;
+    background-color: $card-bg-color;
+  }
+}
