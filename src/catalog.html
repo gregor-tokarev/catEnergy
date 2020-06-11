@@ -164,6 +164,47 @@
       @@include('blocks/loadMore/index.html')
     </div>
   </section>
+  <section class="section">
+    <h2 class="section__title">Дополнительные товары</h2>
+    <div class="section__inner">
+      <div class="section__content">
+        <div class="catalog__more">
+          <div class="catalog__more-inner">
+            <div class="catalog__more-products">
+
+              @@include('blocks/moreProducts/index.html', {
+                'title': 'Сахарозаменитель',
+                'char': '1 упаковка (100 г)',
+                'value': '200 Р.'
+              })
+              @@include('blocks/moreProducts/index.html', {
+                'title': 'Сахарозаменитель',
+                'char': '1 упаковка (100 г)',
+                'value': '200 Р.'
+              })
+              @@include('blocks/moreProducts/index.html', {
+                'title': 'Сахарозаменитель',
+                'char': '1 упаковка (100 г)',
+                'value': '200 Р.'
+              })
+              @@include('blocks/moreProducts/index.html', {
+                'title': 'Сахарозаменитель',
+                'char': '1 упаковка (100 г)',
+                'value': '200 Р.'
+              })
+            </div>
+            <div class="catalog__gift">
+              <div class="catalog__gift-img">
+                <img src="images/gift.png" alt="">
+              </div>
+              <p class="catalog__gift-text">Закажите все
+                и получите чехол для кота в подарок!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 @@include('blocks/map/index.html', {

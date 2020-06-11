@@ -1,10 +1,23 @@
 .load-more {
   text-align: center;
 
+  @media ($tablet) {
+    height: 100%;
+    border: 1px solid $first-bd;
+  }
+
   &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 25px 0;
 
     @extend %container;
+
+    @media ($tablet) {
+      justify-content: space-between;
+      padding: 55px 0 40px;
+    }
   }
 
   &__plus img {
