@@ -1,5 +1,4 @@
 .button {
-  display: block;
   padding: 15px 25px;
   font-family: $def-font;
   font-size: 20px;
@@ -10,4 +9,13 @@
   cursor: pointer;
   background-color: $accent-color;
   border: none;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--dis {
+    color: #444;
+    background-color: $card-bg-color;
+  }
 }
