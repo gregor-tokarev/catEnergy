@@ -1,5 +1,5 @@
 {
-  "name": "catEnergy",
+  "name": "cat_energy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "^14"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
